@@ -1,7 +1,7 @@
 # WebBalloon
 **WebBalloon is a CLI unminify application. It has the following features:**
-  - unminifies JavaScript file contents passed in standard input
-  - unminifies CSS file contents passed in standard input
+  - unminifies JavaScript file contents passed in through standard input and sends the result to standard output
+  - unminifies CSS file contents passed in through standard input and sends the result to standard output
   - configurable output indentation (default is 2 spaces)
 
 **License:** [BSL-1.0](/LICENSE)
