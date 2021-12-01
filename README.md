@@ -7,7 +7,7 @@
 **License:** [BSL-1.0](/LICENSE)
 
 ## Installation
-Prerequisites: [Python3](https://www.python.org/downloads/), [Pip](https://pip.pypa.io/en/stable/installation/)
+Prerequisites: [Python3](https://www.python.org/downloads/)
 ```
 # Cd into the project directory ("webballoon")
 # Make the install script executable.
