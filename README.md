@@ -18,7 +18,11 @@ chmod u+x ./install.sh
 
 ## Usage
 ```
-TODO
+usage: webballoon.py [-h] [--indent INDENT]
+
+optional arguments:
+  -h, --help       show this help message and exit
+  --indent INDENT  the indent size in spaces.(default 2)
 ```
 
 ## Examples
