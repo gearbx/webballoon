@@ -22,10 +22,26 @@ def _get_indent_size() -> int:
     args = parser.parse_args()
     return args.indent
 
+def _get_indent_spaces(indent: int) -> str:
+    return " " * indent
+
 def main():
-    indent = _get_indent_size()
-    print(indent)
-    # TODO parse stdin data
+    indent_increase = _get_indent_size()
+    indent = 0
+    for line in sys.stdin:
+        for character in line:
+            if character == "{":
+                indent += indent_increase
+                print(" {\n" + _get_indent_spaces(indent), end="", file=sys.stdout)
+            elif character == "}":
+                indent = max(0, indent - indent_increase)
+                print("\n" + _get_indent_spaces(indent) + "}\n" + _get_indent_spaces(indent), end="", file=sys.stdout)
+            elif character == ";":
+                print(";\n" + _get_indent_spaces(indent), end="", file=sys.stdout)
+            elif character == ",":
+                print(", ", end="", file=sys.stdout)
+            else:
+                print(character, end="", file=sys.stdout)
 
 if __name__ == "__main__":
     main()

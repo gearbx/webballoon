@@ -26,8 +26,23 @@ optional arguments:
 ```
 
 ## Examples
-#### TODO
+#### De-minify JavaScript file.
 ```
-webbaloon.py TODO
+cat script.min.js | webballoon.py
+```
+
+#### De-minify JavaScript file with 4 spaces indent.
+```
+cat script.min.js | webballoon.py --indent 4
+```
+
+#### De-minify CSS file.
+```
+cat style.min.css | webballoon.py
+```
+
+#### De-minify CSS file with 4 spaces indent.
+```
+cat style.min.css | webballoon.py --indent 4
 ```
 
