@@ -25,6 +25,9 @@ def _get_indent_size() -> int:
 def _get_indent_spaces(indent: int) -> str:
     return " " * indent
 
+def _print_to_stream(text: str):
+    print(text, end="", file=sys.stdout)
+
 def main():
     indent_increase = _get_indent_size()
     indent = 0
@@ -32,16 +35,16 @@ def main():
         for character in line:
             if character == "{":
                 indent += indent_increase
-                print(" {\n" + _get_indent_spaces(indent), end="", file=sys.stdout)
+                _print_to_stream(" {\n" + _get_indent_spaces(indent))
             elif character == "}":
                 indent = max(0, indent - indent_increase)
-                print("\n" + _get_indent_spaces(indent) + "}\n" + _get_indent_spaces(indent), end="", file=sys.stdout)
+                _print_to_stream("\n" + _get_indent_spaces(indent) + "}\n" + _get_indent_spaces(indent))
             elif character == ";":
-                print(";\n" + _get_indent_spaces(indent), end="", file=sys.stdout)
+                _print_to_stream(";\n" + _get_indent_spaces(indent))
             elif character == ",":
-                print(", ", end="", file=sys.stdout)
+                _print_to_stream(", ")
             else:
-                print(character, end="", file=sys.stdout)
+                _print_to_stream(character)
 
 if __name__ == "__main__":
     main()
